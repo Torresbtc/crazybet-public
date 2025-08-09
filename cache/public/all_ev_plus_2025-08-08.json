@@ -1,7 +1,7 @@
 [
   {
     "jugador": "Nolan Schanuel",
-    "team": "None",
+    "team": "LAA",
     "tipo": "Singles",
     "linea": 0.5,
     "lado": "over",
@@ -21,7 +21,7 @@
   },
   {
     "jugador": "Connor Wong",
-    "team": "None",
+    "team": "BOS",
     "tipo": "Singles",
     "linea": 0.5,
     "lado": "under",
@@ -81,7 +81,7 @@
   },
   {
     "jugador": "Ty France",
-    "team": "None",
+    "team": "TOR",
     "tipo": "Total Bases",
     "linea": 1.5,
     "lado": "under",
@@ -101,7 +101,7 @@
   },
   {
     "jugador": "Ty France",
-    "team": "None",
+    "team": "TOR",
     "tipo": "Runs",
     "linea": 0.5,
     "lado": "under",
@@ -121,7 +121,7 @@
   },
   {
     "jugador": "Austin Gomber",
-    "team": "None",
+    "team": "COL",
     "tipo": "Pitcher Earned Runs",
     "linea": 3.5,
     "lado": "under",

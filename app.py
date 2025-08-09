@@ -41,7 +41,7 @@ def cargar_por_fechas(fechas: List[date]) -> pd.DataFrame:
     """
     Lee todos los all_ev_plus_YYYY-MM-DD.json indicados,
     asigna 'fecha' a cada fila a partir del nombre del archivo,
-    y completa columnas base si faltan.
+    y completa/normaliza columnas base si faltan.
     """
     frames = []
     for d in fechas:
@@ -61,7 +61,7 @@ def cargar_por_fechas(fechas: List[date]) -> pd.DataFrame:
 
     out = pd.concat(frames, ignore_index=True)
 
-    # columnas base si faltan
+    # columnas base si faltan (incluye team)
     base_cols = [
         ("deporte", "MLB"),
         ("jugador", ""), ("team", ""), ("tipo", ""), ("linea", None),
@@ -72,9 +72,17 @@ def cargar_por_fechas(fechas: List[date]) -> pd.DataFrame:
         if c not in out.columns:
             out[c] = default
 
-    # numéricos
+    # tipos numéricos
     for c in ["probabilidad", "odds", "linea", "streak"]:
         out[c] = pd.to_numeric(out[c], errors="coerce")
+
+    # normaliza columnas de texto: NaN/None/"None" -> ""
+    text_cols = ["deporte","jugador","team","tipo","lado","resultado","streak_type"]
+    for c in text_cols:
+        if c in out.columns:
+            out[c] = out[c].astype(str)
+            out[c] = out[c].where(out[c].notna(), "")
+            out[c] = out[c].replace({"None": ""})
 
     return out
 
@@ -210,12 +218,18 @@ cols_public = [
     "lado", "probabilidad", "resultado", "odds",   # 'odds' ya es decimal
     "streak", "streak_type", "stake", "ganancia_real",
 ]
-# Asegura que existan (si alguna falta la crea vacía)
+# Asegura que existan
 for c in cols_public:
     if c not in df_pub.columns:
         df_pub[c] = None
 
 df_show = df_pub.reindex(columns=cols_public)
+
+# limpieza final de texto (evita 'None')
+for c in ["deporte","jugador","team","tipo","lado","resultado","streak","streak_type"]:
+    if c in df_show.columns:
+        df_show[c] = df_show[c].astype(str).replace({"None": ""})
+        df_show[c] = df_show[c].where(df_show[c].notna(), "")
 
 st.subheader("Vista pública")
 st.dataframe(df_show, use_container_width=True)

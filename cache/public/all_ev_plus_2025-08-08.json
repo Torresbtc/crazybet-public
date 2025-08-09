@@ -41,7 +41,7 @@
   },
   {
     "jugador": "Matt Chapman",
-    "team": "None",
+    "team": "SF",
     "tipo": "Total Bases",
     "linea": 1.5,
     "lado": "over",
@@ -61,7 +61,7 @@
   },
   {
     "jugador": "Nolan Gorman",
-    "team": "None",
+    "team": "STL",
     "tipo": "Hits",
     "linea": 0.5,
     "lado": "under",

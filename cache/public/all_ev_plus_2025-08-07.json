@@ -1,0 +1,53 @@
+[
+  {
+    "jugador": "Liam Hicks",
+    "team": "None",
+    "tipo": "Singles",
+    "linea": 0.5,
+    "lado": "over",
+    "valor_real": null,
+    "resultado": "✅ Acertado",
+    "ev": 0.2596,
+    "probabilidad": 0.6737,
+    "odds": -115,
+    "streak": null,
+    "streak_type": "None",
+    "event_id": null,
+    "singles": 1.0,
+    "strikeouts": null
+  },
+  {
+    "jugador": "Jake Fraley",
+    "team": "None",
+    "tipo": "Singles",
+    "linea": 0.5,
+    "lado": "under",
+    "valor_real": null,
+    "resultado": "⛔️ Void",
+    "ev": 0.1195,
+    "probabilidad": 0.7334,
+    "odds": -190,
+    "streak": null,
+    "streak_type": "None",
+    "event_id": null,
+    "singles": null,
+    "strikeouts": null
+  },
+  {
+    "jugador": "Logan Gilbert",
+    "team": "None",
+    "tipo": "Pitcher Strikeouts",
+    "linea": 8.5,
+    "lado": "under",
+    "valor_real": null,
+    "resultado": "✅ Acertado",
+    "ev": 0.3604,
+    "probabilidad": 0.8248,
+    "odds": -154,
+    "streak": null,
+    "streak_type": "None",
+    "event_id": null,
+    "singles": null,
+    "strikeouts": 6.0
+  }
+]

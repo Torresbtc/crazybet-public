@@ -1,0 +1,18 @@
+[
+  {
+    "jugador": "Braxton Fulford",
+    "team": "COL",
+    "tipo": "Total Bases",
+    "linea": 1.5,
+    "lado": "under",
+    "valor_real": null,
+    "resultado": "✅ Acertado",
+    "ev": 0.3645,
+    "probabilidad": 0.8496,
+    "odds": -165,
+    "streak": null,
+    "streak_type": "None",
+    "event_id": null,
+    "total_bases": 0
+  }
+]
